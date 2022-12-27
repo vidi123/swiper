@@ -63,6 +63,8 @@
                 if(e.target == bulat[i]){
                     bulat[i].className = 'bulat select';
                     gambar = i + 1;
+                    clearInterval(interval);
+                    interval = setInterval(auto_slide, 5000);
                 }
             }
             
