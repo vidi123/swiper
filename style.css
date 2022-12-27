@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #000;
+}
+.container{
+    width: 800px;
+    margin: 50px auto;
+    background-color: #111;
+}
+.swipper{
+    width: 100%;
+    height: 400px;
+    background: transparent;
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 1s;
+    position: relative;
+    overflow: hidden;
+}
+.bg-satu{
+    right: 0;
+    transition: 1.3s;
+}
+.bg-dua{
+    right: 800px;
+    transition: 1.3s;
+}
+.bg-tiga{
+    right: 1600px;
+    transition: 1.3s;
+}
+.swipper div{
+    width: 50px;
+    height: 100px;
+    background-color: rgba(34, 34, 34, 0.692);
+    cursor: pointer;
+    z-index: 1;
+}
+.swipper .slide-button:hover{
+    background-color: rgba(34, 34, 34, 0.849);
+}
+.swipper i{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 65px;
+    color: #777;
+}
+.swipper .gambar{
+    width: 100%;
+    height: 400px;
+    position: absolute;
+    display: flex;
+}
+.gambar img{
+    width: 100%;
+}
+.swipper .index{
+    width: 100px;
+    height: 40px;
+    display: flex;
+    align-self: flex-end;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+}
+.index .bulat{
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color: #555;
+    transition: .4s;
+}
+.index .select{
+    width: 45px;
+    border-radius: 50px;
+    background-color: #666;
+}

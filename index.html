@@ -4,93 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>swiper carousel</title>
+    <title>swiper carousel 1.1</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <style>
-        :root{
-            --bg-color: #000;
-            --bg-container: #111;
-        }
-        *{
-            margin: 0;
-            padding: 0;
-        }
-        body{
-            background-color: var(--bg-color);
-        }
-        .container{
-            width: 800px;
-            margin: 50px auto;
-            background-color: var(--bg-container);
-        }
-        .swipper{
-            width: 100%;
-            height: 400px;
-            /* background-image: url(pantai.png); */
-            background-size: cover;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: 1s;
-        }
-        .bg-satu{
-            background-image: url(pantai.png);
-        }
-        .bg-dua{
-            background-image: url(hutancuy.jpg);
-        }
-        .bg-tiga{
-            background-image: url(hutansungai.jpg);
-        }
-        .swipper div{
-            width: 50px;
-            height: 100px;
-            background-color: rgba(34, 34, 34, 0.692);
-            /* display: flex; */
-            /* justify-content: center; */
-            /* align-items: center; */
-            cursor: pointer;
-        }
-        .swipper div:hover{
-            background-color: rgba(34, 34, 34, 0.849);
-        }
-        .swipper i{
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            /* text-align: center; */
-            font-size: 65px;
-            color: #777;
-            /* background-color: aquamarine; */
-        }
-        .swipper .index{
-            /* width: 200px; */
-            background-color: transparent;
-            height: 50px;
-            align-self: flex-end;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .swipper .index:hover{
-            background-color: transparent;
-        }
-        .index span{
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: #333;
-        }
-        .index .select{
-            background-color: #111;
-        }
-    </style>
 </head>
 <body>
     <div class="container">
         <div class="swipper">
+            <div class="gambar">
+                <img src="img/laut biru.jpg">
+                <img src="img/hutancuy.jpg">
+                <img src="img/hutansungai.jpg">
+            </div>
             <div class="slide-button">
                 <i class='bx bx-chevron-left previous' ></i>
             </div>
@@ -104,146 +30,7 @@
             </div>
         </div>
     </div>
-    
-    <script>
-        const swipper = document.querySelector('.swipper');
-        const bulat = document.querySelectorAll('.bulat');
-        let gambar = 1;
 
-        // auto ganti gambar zone
-        setInterval(function(){
-            gambar += 1;
-            // console.log(gambar);
-            if(gambar == 4){
-                gambar = 1;
-            }
-            if(gambar == 1){
-                swipper.className = 'swipper bg-satu';
-                bulat[0].classList.add('select');
-                bulat[0].nextElementSibling.className = 'bulat';
-                bulat[0].nextElementSibling.nextElementSibling.className = 'bulat';
-            }
-            if(gambar == 2){
-                swipper.className = 'swipper bg-dua';
-                bulat[1].classList.add('select');
-                bulat[1].nextElementSibling.className = 'bulat'
-                bulat[1].previousElementSibling.className = 'bulat';
-            }
-            if(gambar == 3){
-                swipper.className = 'swipper bg-tiga';
-                bulat[2].classList.add('select');
-                bulat[2].previousElementSibling.className = 'bulat';
-                bulat[2].previousElementSibling.previousElementSibling.className = 'bulat';
-            }
-        }, 3000);
-        
-
-        // tombol tombol zone
-        swipper.addEventListener('click', function(e){
-            if(e.target.classList.contains('previous')){
-                if(gambar > 0){
-                    gambar -= 1;
-                    // console.log(gambar);
-                }
-                if(gambar == 0){
-                    gambar = 3;
-                }
-            }
-            if(e.target.classList.contains('next')){
-                if(gambar < 4){
-                    gambar += 1;
-                    // console.log(gambar);
-                }
-                if(gambar == 4){
-                    gambar = 1;
-                }
-
-                // swipper.style.backgroundImage = gambar[1];
-                // gambar[1];
-                // console.log(gambar.length);
-            }
-            // if(gambar == 3 && e.target.classList.contains('next').onClick){
-            //     gambar = 1;
-            // }
-            if(e.target == bulat[0]){
-                gambar = 1;
-                // e.target.classList.add('select');
-                // e.target.nextElementSibling.className = 'bulat';
-                // e.target.nextElementSibling.nextElementSibling.className = 'bulat';
-            }
-            if(e.target == bulat[1]){
-                gambar = 2;
-                // e.target.classList.add('select');
-                // e.target.previousElementSibling.className = 'bulat';
-                // e.target.nextElementSibling.className = 'bulat';
-            }
-            if(e.target == bulat[2]){
-                gambar = 3;
-                // e.target.classList.add('select');
-                // e.target.previousElementSibling.className = 'bulat';
-                // e.target.previousElementSibling.previousElementSibling.className = 'bulat';
-            }
-            
-            console.log(e.target);
-            if(gambar == 1){
-                this.className = 'swipper bg-satu';
-                bulat[0].classList.add('select');
-                bulat[0].nextElementSibling.className = 'bulat';
-                bulat[0].nextElementSibling.nextElementSibling.className = 'bulat';
-            }
-            if(gambar == 2){
-                this.className = 'swipper bg-dua';
-                bulat[1].classList.add('select');
-                bulat[1].nextElementSibling.className = 'bulat'
-                bulat[1].previousElementSibling.className = 'bulat';
-            }
-            if(gambar == 3){
-                this.className = 'swipper bg-tiga';
-                bulat[2].classList.add('select');
-                bulat[2].previousElementSibling.className = 'bulat';
-                bulat[2].previousElementSibling.previousElementSibling.className = 'bulat';
-            }
-
-        });
-        
-        
-
-
-        // for(let i = 0; i <= bulat.length; i++){
-        //     bulat[i].addEventListener('click', function(){
-        //         bulat[i].style.backgroundColor = '#333';
-        //         // console.log(bulat[i]);fh
-        //     });
-        // }
-
-        // let gambar = ['url(pantai.png)', 'url(hutancuy.jpg)', 'url(hutansungai.jpg)']
-        // let gambar = {   
-        //     img_satu: 'url(pantai.png)',
-        //     img_dua: 'url(hutancuy.jpg)',
-        //     img_tiga: 'url(hutansungai.jpg)'
-        // };
-        // swipper.style.backgroundImage = gambar[gambar.length - 1];
-        // swipper.style.backgroundImage = gambar[0];
-
-        if(gambar == 1){
-            swipper.className = 'swipper bg-satu';
-            bulat[0].classList.add('select');
-        }
-
-        // kalo mentok kembali ke awal zone
-        if(gambar == 0){
-            gambar = 3;
-        }
-        if(gambar == 4){
-            gambar = 1;
-        }
-
-        // setInterval(function(){
-        //     gambar += 1;
-        //     // console.log(gambar);
-        // }, 500);
-        // swipper.classList.add('bg-satu');
-        // console.log(gambar);
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
